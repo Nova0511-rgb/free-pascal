@@ -1,0 +1,196 @@
+program apa;
+uses crt;
+const Direktur=8000000;
+      Manager=7000000;
+      Karyawan=6000000;
+      Cuti_n=4;
+      Cuti_r=2;
+      cuti_p=0;
+      Bpjs_N=1;
+      Bpjs_R=2;
+      Bpjs_P=4;
+      Jht_n=175000;
+      jht_r=125000;
+      jht_p=75000;
+      asu_n=500000;
+      asu_p=250000;
+      asu_r=200000;
+      bonus_n=4000000;
+      bonus_p=3500000;
+      bonus_r=2500000;
+      lembur_n=8;
+      lembur_p=12;
+      lembur_r=16;
+      bersih_p=9415000;
+      bersih_n=10885000;
+      kops_p=280000;
+var regist:String[20];
+    Jabatan:String[10];
+    Pokok,Bersih, potongan,Bonus, produksi, lemburan, koperasi:real;
+begin
+clrscr;
+writeln;
+writeln('      PT. Mencari Cinta Sejati');
+writeln;
+writeln;
+writeln('      Upah dan Bonus Karyawan');
+writeln('===================================');
+write('  Nomer registrasi      :');ReadLn(regist);
+writeln;
+writeln;
+if regist='N01L03' then
+   begin
+   pokok:=Direktur;
+   bonus:=bonus_n;
+   lemburan:=(lembur_n*80000);
+   Potongan:=(Bpjs_N*120000)+Jht_n+asu_n+(Cuti_N*50000);
+   Writeln('          Biodata karyawan');
+   writeln('===================================');
+   writeln('  Nama       : Novarianto Tri Nugroho');
+   writeln('  Jabatan    : Direktur');
+   writeln('  No.regist  : ',regist);
+   writeln('  alamat     : Kp.telar');
+   writeln('  status     : Belum kawin');
+   writeln('  email      : novaryanto123@gmail.com');
+   writeln('               novalaja05@outlook.co.id');
+   writeln('  No.telp    : +62 877-8218-2303');
+   
+   
+   Writeln;
+   writeln;
+   
+   Writeln('         Rincian pemasukan');
+   writeln('===================================');
+   writeln('  Pokok         :Rp.',direktur);
+   writeln('  Bonus         :Rp.',bonus_n);
+   writeln('  Lembur        :Rp.',lemburan);
+   
+   writeln;
+   writeln;
+   
+   writeln('        Rincian potongan');
+   writeln('===================================');
+   writeln('  Tanggungan Bpjs     :Rp.120.000');
+   writeln('  Anggota Bpjs        :',bpjs_n);
+   writeln('                      :Rp.120.000 × ',bpjs_n);
+   writeln('  Jumlah iuran Bpjs   :Rp.',bpjs_n*120000);
+   writeln;
+   writeln('  Asuransi            :Rp.',asu_N);
+   writeln('  JHT                 :Rp.',jht_n);
+   writeln('  Cuti                :Rp.',Cuti_N*50000);
+   writeln('  Koperasi            :Rp.0');
+   writeln;
+   writeln;
+   
+   Writeln('            Upah karyawan');
+   writeln('===================================');
+   Writeln('  Gaji Pokok      :Rp.',Direktur);
+   writeln('  Bonus           :Rp.',bonus_n);
+   writeln('  Potongan        :Rp.',Potongan);
+   Writeln('  Gaji bersih     :Rp.',Bersih_n);
+   end
+else if regist='P45J24' then
+   begin
+   pokok:=manager;
+   bonus:=bonus_p;
+   lemburan:=(lembur_p*80000);
+   Potongan:=(Bpjs_p*120000)+kops_p+Jht_p+asu_p+(Cuti_p*50000);
+   Writeln('          Biodata karyawan');
+   writeln('===================================');
+   writeln('  Nama       : Muhammad Perdy');
+   writeln('  Jabatan    : Manager');
+   writeln('  No.regist  : ',regist);
+   writeln('  alamat     : Permata Regensi');
+   writeln('  status     : Belum kawin');
+   writeln('  email      : none');
+   writeln('  No.telp    : +62 857-8112-5390');
+   
+   
+   Writeln;
+   writeln;
+   
+   Writeln('            Rincian pemasukan');
+   writeln('===================================');
+   writeln('  Pokok         :Rp.',manager);
+   writeln('  Bonus         :Rp.',bonus_p);
+   writeln('  Lembur        :Rp.',lemburan);
+   
+   writeln;
+   writeln;
+   
+   writeln('        Rincian potongan');
+   writeln('===================================');
+   writeln('  Tanggungan Bpjs     :Rp.120.000');
+   writeln('  Anggota Bpjs        :',bpjs_p);
+   writeln('                      :Rp.120.000 × ',bpjs_p);
+   writeln('  Jumlah iuran Bpjs   :Rp.',bpjs_p*120000);
+   writeln;
+   writeln('  Asuransi            :Rp.',asu_p);
+   writeln('  JHT                 :Rp.',jht_p);
+   writeln('  Cuti                :Rp.',Cuti_p*50000);
+   writeln('  Koperasi            :Rp.',kops_p);
+   writeln;
+   writeln;
+   
+   Writeln('            Upah karyawan');
+   writeln('===================================');
+   Writeln('  Gaji Pokok      :Rp.',manager);
+   writeln('  Bonus           :Rp.',bonus_p);
+   writeln('  Potongan        :Rp.',Potongan);
+   Writeln('  Gaji bersih     :Rp.',Bersih_p);
+   end
+else if regist='R76G35' then
+   begin
+   pokok:=Karyawan;
+   bonus:=bonus_r;
+   lemburan:=(lembur_r*80000);
+   Potongan:=(Bpjs_r*120000)+Jht_r+asu_r+(Cuti_r*50000);
+   Bersih:=(Karyawan+bonus_r)-(Bpjs_r*120000)-Jht_r-asu_r-(Cuti_r*50000);
+   Writeln('          Biodata karyawan');
+   writeln('===================================');
+   writeln('  Nama       : Muhammad Rifaldi Alfaredzal');
+   writeln('  Jabatan    : Karyawan');
+   writeln('  No.regist  : ',regist);
+   writeln('  alamat     : Kp.Selang Bojong');
+   writeln('  status     : Belum kawin');
+   writeln('  email      : muhammadrifaldialfarezal@gmail.com');
+   writeln('  No.telp    : +62 877-8845-6675');
+   
+   
+   Writeln;
+   writeln;
+   
+   Writeln('            Rincian pemasukan');
+   writeln('===================================');
+   writeln('  Pokok         :Rp.',Karyawan);
+   writeln('  Bonus         :Rp.',bonus_r);
+   writeln('  Lembur        :Rp.',lemburan);
+   
+   writeln;
+   writeln;
+   
+   writeln('        Rincian potongan');
+   writeln('===================================');
+   writeln('  Tanggungan Bpjs     :Rp.120.000');
+   writeln('  Anggota Bpjs        :',bpjs_r);
+   writeln('                      :Rp.120.000 × ',bpjs_r);
+   writeln('  Jumlah iuran Bpjs   :Rp.',bpjs_r*120000);
+   writeln;
+   writeln('  Asuransi            :Rp.',asu_r);
+   writeln('  JHT                 :Rp.',jht_r);
+   writeln('  Cuti                :Rp.',Cuti_r*50000);
+   writeln('  Koperasi            :Rp.0');
+   writeln;
+   writeln;
+   
+   Writeln('            Upah karyawan');
+   writeln('===================================');
+   Writeln('  Gaji Pokok      :Rp.',Karyawan);
+   writeln('  Bonus           :Rp.',bonus_r);
+   writeln('  Potongan        :Rp.',Potongan);
+   Writeln('  Gaji bersih     :Rp.',Bersih);
+   end
+else
+   writeln('  Nomer registrasi tersebut tidak terdaftar...');
+   ;  ; readln;
+end.
